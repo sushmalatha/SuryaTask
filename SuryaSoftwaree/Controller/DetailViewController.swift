@@ -25,7 +25,8 @@ class DetailViewController: UIViewController,UITableViewDataSource,UITableViewDe
         detailsTableview.dataSource = self
         self.title = "Details"
         
-        // Do any additional setup after loading the view.
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,7 +57,7 @@ class DetailViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 cell.contentView.layer.cornerRadius = 10
                 cell.contentView.clipsToBounds = true
                 cell.contentView.layer.borderWidth = 1
-                cell.contentView.layer.borderColor = UIColor.black.cgColor
+                cell.contentView.layer.borderColor = UIColor.orange.cgColor
         
         
         //cell.myImageView.sd_setImage(with: URL(string: "https://pbs.twimg.com/profile_images/1047752972/2010-01-14-angela-merkel_property_poster.jpg"), placeholderImage: UIImage(named: "placeholder.png"))
@@ -76,9 +77,6 @@ class DetailViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
         return cell
     }
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 20
-//    }
 
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -98,7 +96,7 @@ class DetailViewController: UIViewController,UITableViewDataSource,UITableViewDe
         {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Detail")
             let resultData  =  try cntxt.fetch(fetchRequest)
-            print("Row count is :::\(resultData.count)")
+           // print("Row count is :::\(resultData.count)")
             
             if (resultData.count > 0) {
                 
@@ -120,6 +118,8 @@ class DetailViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         catch{
             print("exception in fetching...")
+            
+            
         }
     }
 

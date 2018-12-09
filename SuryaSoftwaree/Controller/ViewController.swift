@@ -12,6 +12,9 @@ import CoreData
 class ViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var nextButton: UIButton!
+
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
 
     
@@ -28,6 +31,23 @@ class ViewController: UIViewController,UITextFieldDelegate {
         activityIndicator.color = UIColor.black
         self.view.addSubview(activityIndicator)
         activityIndicator.isHidden = true
+        
+        // SubViews Customization
+        
+        emailTextField.layer.cornerRadius = 10
+        emailTextField.clipsToBounds = true
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor.orange.cgColor
+        
+        let color = UIColor.black
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSForegroundColorAttributeName : color])
+        
+        
+        nextButton.layer.cornerRadius = 10
+        nextButton.clipsToBounds = true
+//        nextButton.layer.borderWidth = 1
+//        nextButton.layer.borderColor = UIColor.orange.cgColor
+
     
         
         let count = fetchData()
